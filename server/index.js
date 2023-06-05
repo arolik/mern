@@ -1,6 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cors from 'cors';
+import authRoute from './routes/authRoute.js'
 
 const app = express();
 dotenv.config();
@@ -10,6 +12,12 @@ const PORT = process.env.PORT || 3001;
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_NAME = process.env.DB_NAME;
+
+app.use(cors());
+app.use(express.json());
+
+//http://localhost:3002/
+app.use('/api/auth', authRoute);
 
 async function start () {
     try {
