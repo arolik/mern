@@ -1,13 +1,12 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-const Layout = (children) => {
+const Layout = ({children}) => {
     return (
         <React.Fragment>
-            <div className='container'>
-                <Navbar>
-                    {children}
-                </Navbar>
+            <div className='mx-auto w-full'>
+                <Navbar />
+                {children}
             </div>
 
         </React.Fragment>

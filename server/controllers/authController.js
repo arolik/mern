@@ -33,4 +33,11 @@ export const register = async function (request, response) {
 
 
 
+export const getMe = async function (request, response) {
+    try {
+        
+    } catch(error){
+        response.json({messgae: 'can not get a token'})
+    }
+}
 
