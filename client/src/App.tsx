@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Layout from './components/Layout';
 import { Route, Routes } from 'react-router-dom';
@@ -7,8 +7,17 @@ import PostsPage from './pages/PostsPage';
 import AddPostPage from './pages/AddPostPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import { useAppDispatch } from './redux/hooks';
+import { getMe } from './redux/authSlice';
 
 function App() {
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getMe())
+  }, [])
+
   return (
     <Layout>
       <Routes>

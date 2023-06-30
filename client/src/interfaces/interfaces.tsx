@@ -1,17 +1,26 @@
 
 export interface AuthStateInterface {
-    username: string,
-    password: string
+    username: string | null,
+    token: string | null,
+    status: string | null,
 }
 
-export interface NewUserInterface {
+export interface UserInterface {
     username: string,
     password: string,
+    _id: string,
+    createdAt: string,
+    updatedAt: string
 }
 
 export interface NewUserDataInterface {
     token: string,
-    newUser: NewUserInterface,
+    newUser: UserInterface,
     message: string
 }
 
+export interface UserDataInterface {
+    token: string,
+    user: UserInterface,
+    message: string
+}

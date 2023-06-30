@@ -1,9 +1,7 @@
 import axios from 'axios';
-import { config } from 'process';
-
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3002/api/auth'
+    baseURL: 'http://localhost:3002/api'
 })
 
 instance.interceptors.request.use(config => {
